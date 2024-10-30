@@ -3,14 +3,7 @@
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import {
-  Coffee,
-  Server,
-  Database,
-  Briefcase,
-  BookOpen,
-  Award,
-} from "lucide-react";
+import { Coffee, Server, Database, Briefcase, BookOpen } from "lucide-react";
 import Link from "next/link";
 
 const containerVariants = {
