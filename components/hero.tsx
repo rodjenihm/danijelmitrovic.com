@@ -11,8 +11,8 @@ export default function Hero() {
     visible: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.2,
-        delayChildren: 0.3,
+        staggerChildren: 0.15,
+        delayChildren: 0.2,
       },
     },
   };
@@ -24,8 +24,8 @@ export default function Hero() {
       y: 0,
       transition: {
         type: "spring",
-        stiffness: 100,
-        damping: 10,
+        stiffness: 120,
+        damping: 9,
       },
     },
   };
@@ -37,9 +37,9 @@ export default function Hero() {
       scale: 1,
       transition: {
         type: "spring",
-        stiffness: 120,
-        damping: 15,
-        delay: 0.5,
+        stiffness: 150,
+        damping: 10,
+        delay: 0.4,
       },
     },
   };
@@ -53,8 +53,8 @@ export default function Hero() {
       transition: {
         type: "spring",
         stiffness: 200,
-        damping: 20,
-        delay: 1,
+        damping: 12,
+        delay: 0.4,
       },
     },
   };
