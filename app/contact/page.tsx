@@ -26,7 +26,7 @@ export default function Contact() {
   return (
     <section
       id="contact"
-      className="w-full py-16 md:py-24 lg:py-32 bg-background"
+      className="w-full py-16 md:py-24 lg:py-32 bg-background min-h-[calc(100vh-12rem)]"
     >
       <div className="container px-4 md:px-6 mx-auto">
         <motion.div
