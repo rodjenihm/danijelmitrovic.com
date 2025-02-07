@@ -96,6 +96,9 @@ export default function Hero() {
             <Button variant="outline" asChild>
               <Link href="/resume.pdf">Resume</Link>
             </Button>
+            <Button variant="secondary" asChild>
+              <Link href="/blog">Blog</Link>
+            </Button>
           </motion.div>
         </div>
         <motion.div
