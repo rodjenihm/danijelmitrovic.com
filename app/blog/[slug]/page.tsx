@@ -11,7 +11,7 @@ interface Params {
 }
 
 interface PageProps {
-  params: Params;
+  params: Promise<Params>;
 }
 
 export async function generateStaticParams() {
