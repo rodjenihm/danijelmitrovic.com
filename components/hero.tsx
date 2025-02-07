@@ -1,9 +1,14 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Server, Database, Code2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
 
 export default function Hero() {
   const containerVariants = {
@@ -68,7 +73,7 @@ export default function Hero() {
         initial="hidden"
         animate="visible"
       >
-        <div className="flex flex-col items-center space-y-4 text-center">
+        <div className="flex flex-col items-start space-y-4 text-left md:items-center md:text-center">
           <motion.p
             className="text-sm uppercase tracking-wide text-muted-foreground"
             variants={itemVariants}
@@ -84,49 +89,20 @@ export default function Hero() {
             </span>
           </motion.h1>
           <motion.p
-            className="mx-auto max-w-[700px] text-muted-foreground md:text-xl"
+            className="mx-auto max-w-[700px] text-muted-foreground md:text-xl font-semibold"
             variants={itemVariants}
           >
             Java & Spring Expert | Backend Engineer | Cloud Enthusiast
           </motion.p>
           <motion.div className="space-x-4" variants={itemVariants}>
             <Button asChild>
-              <Link href="/about">About Me</Link>
+              <Link href="/blog">Blog</Link>
             </Button>
             <Button variant="outline" asChild>
               <Link href="/resume.pdf">Resume</Link>
             </Button>
-            <Button variant="secondary" asChild>
-              <Link href="/blog">Blog</Link>
-            </Button>
           </motion.div>
         </div>
-        <motion.div
-          className="mt-16 flex justify-center space-x-8"
-          variants={containerVariants}
-        >
-          <motion.div
-            variants={iconVariants}
-            whileHover={{ scale: 1.1 }}
-            whileTap={{ scale: 0.9 }}
-          >
-            <Code2 className="h-16 w-16 text-primary" />
-          </motion.div>
-          <motion.div
-            variants={iconVariants}
-            whileHover={{ scale: 1.1 }}
-            whileTap={{ scale: 0.9 }}
-          >
-            <Server className="h-16 w-16 text-primary" />
-          </motion.div>
-          <motion.div
-            variants={iconVariants}
-            whileHover={{ scale: 1.1 }}
-            whileTap={{ scale: 0.9 }}
-          >
-            <Database className="h-16 w-16 text-primary" />
-          </motion.div>
-        </motion.div>
       </motion.div>
     </section>
   );
