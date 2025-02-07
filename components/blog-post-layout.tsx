@@ -1,11 +1,24 @@
 import React from "react";
+import type { Metadata } from "next";
 
 interface BlogPostLayoutProps {
   children: React.ReactNode;
   meta: {
     title: string;
     date: string;
+    excerpt?: string;
     [key: string]: any; // Allow for other metadata
+  };
+}
+
+export async function generateMetadata({
+  meta,
+}: BlogPostLayoutProps): Promise<Metadata> {
+  return {
+    title: meta.title,
+    description:
+      meta.excerpt ||
+      `Blog post from ${new Date(meta.date).toLocaleDateString()}`, // Fallback description
   };
 }
 

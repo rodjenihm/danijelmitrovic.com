@@ -3,6 +3,7 @@ import fs from "fs";
 import path from "path";
 import matter from "gray-matter";
 import Link from "next/link";
+import { Metadata } from "next";
 
 interface Post {
   slug: string;
@@ -42,6 +43,12 @@ async function getPosts() {
   return posts;
 }
 
+export const metadata: Metadata = {
+  title: "Blog | Danijel Mitrović",
+  description:
+    "Explore blog posts on Java, Spring, cloud technologies, and more.",
+};
+
 export default async function Blog() {
   const posts = await getPosts();
   return (
@@ -60,8 +67,7 @@ export default async function Blog() {
               <span className="text-gray-500 ml-2">
                 ({new Date(post.meta.date).toLocaleDateString()})
               </span>
-              <p className="text-gray-600">{post.meta.excerpt}</p>{" "}
-              {/* Display excerpt */}
+              <p className="text-gray-600">{post.meta.excerpt}</p>
             </li>
           ))}
         </ul>
