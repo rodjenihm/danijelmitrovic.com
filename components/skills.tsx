@@ -65,7 +65,7 @@ export default function Skills() {
           {skills.map((skill, index) => (
             <motion.div
               key={index}
-              className="bg-primary/10 hover:bg-primary/20 text-primary rounded-md px-4 py-2 text-sm font-medium shadow-sm hover:shadow-md transition duration-200 flex items-center gap-2"
+              className="bg-primary/10 hover:bg-primary/20 text-primary rounded-md md:px-4 md:py-2 md:text-sm px-2 py-1 text-xs font-medium shadow-sm hover:shadow-md transition duration-200 flex items-center gap-2"
               variants={itemVariants}
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
