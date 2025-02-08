@@ -73,7 +73,7 @@ export default function Hero() {
         initial="hidden"
         animate="visible"
       >
-        <div className="flex flex-col items-start space-y-4 text-left md:items-center md:text-center">
+        <div className="flex flex-col items-center space-y-4 text-left md:items-center md:text-center">
           <motion.p
             className="text-sm uppercase tracking-wide text-muted-foreground"
             variants={itemVariants}
@@ -89,7 +89,7 @@ export default function Hero() {
             </span>
           </motion.h1>
           <motion.p
-            className="mx-auto max-w-[700px] text-muted-foreground md:text-xl font-semibold"
+            className="mx-auto max-w-[700px] text-muted-foreground md:text-xl font-semibold text-center"
             variants={itemVariants}
           >
             Java & Spring Expert | Backend Engineer | Cloud Enthusiast
