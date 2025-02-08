@@ -50,7 +50,7 @@ export default function Contact() {
           <motion.div className="space-y-6" variants={itemVariants}>
             <Button
               asChild
-              className="w-full sm:w-auto text-lg py-6 px-8 border-2 border-primary"
+              className="sm:w-auto text-lg py-4 px-6 border-2 border-primary"
             >
               <a
                 href="mailto:danijel.mitrovic.1991@gmail.com"
