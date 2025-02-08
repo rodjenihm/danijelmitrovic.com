@@ -1,0 +1,12 @@
+.
+├── app
+│   ├── about
+│   ├── blog
+│   │   └── [slug]
+│   └── contact
+├── components
+│   └── ui
+├── lib
+└── posts
+
+10 directories

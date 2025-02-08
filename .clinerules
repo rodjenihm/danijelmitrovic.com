@@ -1,0 +1,32 @@
+# Project
+
+## Description
+
+- Portfolio website
+- NextJS 15, TailwindCSS, Typescript
+- pnpm package manager
+- use kebab case naming convention for file names
+
+# Security
+
+## Sensitive Files
+
+DO NOT read or modify:
+
+- .env files
+- \*_/config/secrets._
+- \*_/_.pem
+- Any file containing API keys, tokens, or credentials
+
+## Security Practices
+
+- Never commit sensitive files
+- Use environment variables for secrets
+- Keep credentials out of logs and output
+
+# General Instructions
+
+- Project's folder structure is in directories.txt
+- After you create new folder or delete folder always run 'tree -d -I ".next|.git|.idea|node_modules|build|out" > directories.txt' to regenerate directories.txt
+- Project's folder structure including files is in files.txt
+- After you create new file or delete a file always run 'tree -I ".next|.git|.idea|node_modules|build|out" > files.txt' to regenerate files.txt

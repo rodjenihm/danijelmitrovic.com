@@ -3,12 +3,6 @@
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu";
 
 export default function Hero() {
   const containerVariants = {
@@ -18,6 +12,7 @@ export default function Hero() {
       transition: {
         staggerChildren: 0.15,
         delayChildren: 0.2,
+        ease: "easeInOut",
       },
     },
   };
@@ -28,9 +23,8 @@ export default function Hero() {
       opacity: 1,
       y: 0,
       transition: {
-        type: "spring",
-        stiffness: 120,
-        damping: 9,
+        type: "tween",
+        ease: "easeInOut",
       },
     },
   };
@@ -41,9 +35,8 @@ export default function Hero() {
       opacity: 1,
       scale: 1,
       transition: {
-        type: "spring",
-        stiffness: 150,
-        damping: 10,
+        type: "tween",
+        ease: "easeInOut",
         delay: 0.4,
       },
     },
@@ -56,9 +49,8 @@ export default function Hero() {
       scale: 1,
       rotate: 0,
       transition: {
-        type: "spring",
-        stiffness: 200,
-        damping: 12,
+        type: "tween",
+        ease: "easeInOut",
         delay: 0.4,
       },
     },
