@@ -1,20 +1,19 @@
 import type { Metadata } from "next";
-import { Poppins } from "next/font/google";
+import { Inter } from "next/font/google";
 import "./globals.css";
 import Navbar from "../components/navbar";
 import Footer from "../components/footer";
 import { ThemeProvider } from "@/components/theme-provider";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 
-const poppins = Poppins({
+const poppins = Inter({
   subsets: ["latin"],
   display: "swap",
-  variable: "--font-poppins",
   weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
 });
 
 export const metadata: Metadata = {
-  title: "Danijel Mitrović | Software Engineer",
+  title: "Danijel Mitrović",
   description:
     "Danijel Mitrović: Backend-specialized Software Engineer from Serbia. Expert in Java, Spring, Cloud, PostgreSQL, MongoDB, and Redis. Explore my portfolio.",
   keywords:
@@ -43,17 +42,23 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning>
-      <body className={`overflow-y-scroll ${poppins.className}`}>
+    <html lang="en" suppressHydrationWarning className="scroll-smooth">
+      <body
+        className={`h-screen flex flex-col overflow-y-scroll ${poppins.className}`}
+      >
         <ThemeProvider
           attribute="class"
           defaultTheme="system"
           enableSystem
           disableTransitionOnChange
         >
-          <Navbar />
-          <main>{children}</main>
-          <Footer />
+          <div className="sticky top-0 z-50 shadow shadow-muted">
+            <Navbar />
+          </div>
+          <main className="flex-1">{children}</main>
+          <div className="mt-auto">
+            <Footer />
+          </div>
           <script
             type="application/ld+json"
             dangerouslySetInnerHTML={{
