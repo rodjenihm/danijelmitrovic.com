@@ -1,5 +1,5 @@
-import { Github, Linkedin, X } from "lucide-react";
 import Link from "next/link";
+import { Github, Linkedin, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 export default function Footer() {
@@ -24,9 +24,9 @@ export default function Footer() {
   ];
 
   return (
-    <footer className="w-full bg-background border-t">
-      <div className="max-w-screen-xl mx-auto py-8 px-4 md:px-6 flex flex-col md:flex-row items-center justify-between">
-        <div className="text-center md:text-left mb-4 md:mb-0">
+    <footer className="w-full h-20 bg-background border-t">
+      <div className="max-w-screen-xl h-full mx-auto px-4 md:px-6 flex flex-col md:flex-row items-center justify-between py-4 md:py-0">
+        <div className="text-center md:text-left">
           <p className="text-sm text-muted-foreground">
             © {currentYear} Danijel Mitrović. All rights reserved.
           </p>
