@@ -1,7 +1,5 @@
 .
 ├── app
-│   ├── about
-│   │   └── page.tsx
 │   ├── blog
 │   │   ├── page.tsx
 │   │   └── [slug]
@@ -18,13 +16,12 @@
 │   └── sitemap.ts
 ├── components
 │   ├── blog-post-layout.tsx
-│   ├── career-timeline.tsx
-│   ├── code-block.tsx
+│   ├── code.tsx
 │   ├── footer.tsx
 │   ├── hero.tsx
 │   ├── mode-toggle.tsx
 │   ├── navbar.tsx
-│   ├── skills.tsx
+│   ├── tag.tsx
 │   ├── theme-provider.tsx
 │   └── ui
 │       ├── button.tsx
@@ -48,4 +45,4 @@
 ├── tailwind.config.ts
 └── tsconfig.json
 
-10 directories, 39 files
+9 directories, 37 files

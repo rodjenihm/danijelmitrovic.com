@@ -1,10 +1,9 @@
-// app/blog/[slug]/page.tsx
 import fs from "fs";
 import path from "path";
 import { compileMDX } from "next-mdx-remote/rsc";
 import BlogPostLayout from "@/components/blog-post-layout";
 import { notFound } from "next/navigation";
-import CodeBlock from "@/components/code-block";
+import Code from "@/components/code";
 
 interface Params {
   slug: string;
@@ -39,11 +38,20 @@ export default async function Page({ params }: PageProps) {
   const { content, frontmatter } = await compileMDX<{
     title: string;
     date: string;
+    excerpt?: string;
+    tags?: string[];
   }>({
     source: fileContents,
     options: { parseFrontmatter: true },
     components: {
-      code: CodeBlock,
+      code: (props) => {
+        const { children, className, ...rest } = props;
+        return (
+          <Code {...rest} className={className} inline={!className}>
+            {children}
+          </Code>
+        );
+      },
     },
   });
 
