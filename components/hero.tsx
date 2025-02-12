@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
+import Image from "next/image";
 import { Briefcase, BookOpen } from "lucide-react";
 
 export default function Hero() {
@@ -54,11 +55,13 @@ export default function Hero() {
       >
         <div className="flex flex-col items-center space-y-8 text-left md:items-center md:text-center">
           <div className="flex justify-center overflow-visible">
-            <img
+            <Image
               src="https://dgblq0ba7cx3huq6.public.blob.vercel-storage.com/profile.jpg"
               alt="Danijel Mitrović"
               className="rounded-full w-32 h-32 sm:w-48 sm:h-48 z-50 shadow-lg"
               sizes="(max-width: 640px) 100vw, 192px"
+              width={128}
+              height={128}
             />
           </div>
           <motion.h1
