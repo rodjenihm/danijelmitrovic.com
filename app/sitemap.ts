@@ -12,12 +12,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
     const fileContents = fs.readFileSync(filePath, "utf8");
     const { data } = matter(fileContents);
     const lastModified = data.date ? new Date(data.date) : new Date();
+    const slug = filename.replace(/\.mdx$/, "");
 
     return {
-      url: `https://www.danijelmitrovic.com/blog/${filename.replace(
-        /\.mdx$/,
-        ""
-      )}`,
+      url: `https://www.danijelmitrovic.com/blog/${slug}`,
       lastModified: lastModified,
       changeFrequency: "weekly" as const, // Use 'as const' for type safety
       priority: 0.7,
@@ -32,16 +30,16 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 1,
     },
     {
-      url: "https://www.danijelmitrovic.com/about",
+      url: "https://www.danijelmitrovic.com/portfolio",
       lastModified: new Date(),
       changeFrequency: "monthly",
       priority: 0.8,
     },
     {
-      url: "https://www.danijelmitrovic.com/contact",
+      url: "https://www.danijelmitrovic.com/blog",
       lastModified: new Date(),
       changeFrequency: "weekly",
-      priority: 0.8,
+      priority: 0.7,
     },
     ...blogPostEntries,
   ];
