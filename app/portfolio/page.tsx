@@ -126,7 +126,7 @@ function WorkExperience() {
                       Bloxico Software Solutions
                     </h3>
                     <p className="text-sm text-muted-foreground">
-                      December 2020 - Present
+                      December 2020 - April 2025
                     </p>
                   </div>
                 </div>
@@ -167,7 +167,7 @@ function WorkExperience() {
                   <div>
                     <h4 className="font-medium">Medior Backend Engineer</h4>
                     <p className="text-sm text-muted-foreground">
-                      October 2022 - Present
+                      October 2022 - April 2025
                     </p>
                   </div>
                   <div>
