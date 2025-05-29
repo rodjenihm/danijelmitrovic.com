@@ -1,9 +1,9 @@
 .
 ├── app
 │   ├── blog
-│   │   ├── page.tsx
-│   │   └── [slug]
-│   │       └── page.tsx
+│   │   ├── [slug]
+│   │   │   └── page.tsx
+│   │   └── page.tsx
 │   ├── error.tsx
 │   ├── favicon.ico
 │   ├── globals.css
@@ -29,13 +29,12 @@
 │       ├── dropdown-menu.tsx
 │       └── sheet.tsx
 ├── components.json
-├── deletedOldDeployments.ts
 ├── directories.txt
 ├── files.txt
 ├── lib
 │   └── utils.ts
-├── next.config.mjs
 ├── next-env.d.ts
+├── next.config.mjs
 ├── package.json
 ├── pnpm-lock.yaml
 ├── postcss.config.mjs
@@ -45,4 +44,4 @@
 ├── tailwind.config.ts
 └── tsconfig.json
 
-9 directories, 37 files
+9 directories, 36 files
