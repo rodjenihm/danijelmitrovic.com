@@ -122,6 +122,52 @@ function WorkExperience() {
               <CardContent className="px-6 bg-transparent border-none">
                 <div className="flex items-center space-x-4 mb-4">
                   <div>
+                    <h3 className="font-semibold">TwogNation</h3>
+                    <p className="text-sm text-muted-foreground">
+                      June 2025 - Present
+                    </p>
+                  </div>
+                </div>
+                <div className="space-y-4 text-sm text-muted-foreground">
+                  <p className="text-justify hyphens-auto">
+                    I continued my professional growth by joining TwogNation as
+                    a Senior Backend Engineer. In this role, I am developing and
+                    maintaining the backend services for a high-traffic iGaming
+                    platform using Java and the Spring Framework. My
+                    responsibilities include deploying and managing applications
+                    on AWS ECS with Fargate, ensuring high availability and
+                    scalability. I utilize Amazon Aurora for managing and
+                    persisting application data, and Redis for caching to
+                    improve performance. My role also involves integrating with
+                    various payment processors and KYC providers to ensure
+                    secure transactions and compliance with Anti-Money
+                    Laundering (AML) regulations. To maintain system health and
+                    performance, I utilize Prometheus and Grafana for monitoring
+                    and log analysis, allowing for proactive issue resolution
+                    and system optimization.
+                  </p>
+                </div>
+                <div className="space-y-2 mt-4">
+                  <div>
+                    <h4 className="font-medium">Senior Backend Engineer</h4>
+                    <p className="text-sm text-muted-foreground">
+                      June 2025 - Present
+                    </p>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+          </div>
+
+          <div className="mb-10 flex justify-between items-start w-full last:mb-0">
+            {/* Timeline node */}
+            <div className="absolute transform -translate-x-1/2 translate-y-0 w-6 h-6 rounded-full bg-primary flex items-center justify-center">
+              <div className="w-4 h-4 rounded-full bg-background" />
+            </div>
+            <Card className="bg-transparent border-none shadow-none">
+              <CardContent className="px-6 bg-transparent border-none">
+                <div className="flex items-center space-x-4 mb-4">
+                  <div>
                     <h3 className="font-semibold">
                       Bloxico Software Solutions
                     </h3>
