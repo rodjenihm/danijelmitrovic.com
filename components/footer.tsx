@@ -25,7 +25,7 @@ export default function Footer() {
 
   return (
     <footer className="w-full h-20 bg-background border-t">
-      <div className="max-w-(--breakpoint-xl) h-full mx-auto px-4 md:px-6 flex flex-col md:flex-row items-center justify-between py-4 md:py-0">
+      <div className="max-w-7xl h-full mx-auto px-4 md:px-6 flex flex-col md:flex-row items-center justify-between py-4 md:py-0">
         <div className="text-center md:text-left">
           <p className="text-sm text-muted-foreground">
             © {currentYear} Danijel Mitrović. All rights reserved.

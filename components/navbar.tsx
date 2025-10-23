@@ -27,7 +27,7 @@ export default function Navbar() {
 
   return (
     <nav
-      className="h-20 flex items-center justify-between p-4 bg-background max-w-(--breakpoint-xl) mx-auto"
+      className="h-20 flex items-center justify-between p-4 bg-background max-w-7xl mx-auto"
       aria-label="Main navigation"
     >
       <Link href="/" className="flex items-center space-x-2">

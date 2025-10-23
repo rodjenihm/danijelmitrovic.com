@@ -57,22 +57,24 @@ export default async function Blog() {
   const posts = await getPosts();
   return (
     <div className="container mx-auto py-8 px-4 sm:px-6 lg:px-8">
-      <div className="max-w-(--breakpoint-lg) mx-auto">
+      <div className="max-w-5xl mx-auto">
         <h1 className="text-3xl font-bold mb-8">Tech Blog</h1>
-        <ul>
+        <ul className="space-y-6">
           {posts.map((post) => (
-            <li key={post.slug} className="mb-6">
-              <div className="bg-gray-100 dark:bg-gray-800 rounded-lg shadow-md p-4 hover:shadow-lg transition duration-200">
+            <li key={post.slug}>
+              <div className="bg-card border border-border rounded-lg shadow-sm p-6 hover:shadow-md hover:border-primary/50 transition-all duration-200">
                 <Link
                   href={`/blog/${post.slug}`}
-                  className="text-blue-500 hover:underline text-xl font-semibold"
+                  className="text-primary hover:underline text-xl font-semibold"
                 >
                   {post.meta.title}
                 </Link>
-                <span className="text-gray-500 ml-2 text-sm">
+                <span className="text-muted-foreground ml-2 text-sm">
                   ({formatBlogDate(post.meta.date)})
                 </span>
-                <p className="text-gray-400 mt-2">{post.meta.excerpt}</p>
+                <p className="text-muted-foreground mt-2">
+                  {post.meta.excerpt}
+                </p>
                 <div className="flex flex-wrap gap-2 mt-2">
                   {post.meta.tags &&
                     post.meta.tags.length > 0 &&

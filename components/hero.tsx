@@ -1,56 +1,64 @@
 "use client";
 
-import { motion, type Variants } from "framer-motion";
+import { motion, type Variants, useReducedMotion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import Image from "next/image";
 import { Briefcase, BookOpen } from "lucide-react";
 
 export default function Hero() {
+  const shouldReduceMotion = useReducedMotion();
+
   const containerVariants: Variants = {
-    hidden: { opacity: 0 },
+    hidden: { opacity: shouldReduceMotion ? 1 : 0 },
     visible: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.15,
-        delayChildren: 0.2,
+        staggerChildren: shouldReduceMotion ? 0 : 0.15,
+        delayChildren: shouldReduceMotion ? 0 : 0.2,
       },
     },
   };
 
   const itemVariants: Variants = {
-    hidden: { opacity: 0, y: 20 },
+    hidden: {
+      opacity: shouldReduceMotion ? 1 : 0,
+      y: shouldReduceMotion ? 0 : 20,
+    },
     visible: {
       opacity: 1,
       y: 0,
       transition: {
-        duration: 0.5,
+        duration: shouldReduceMotion ? 0 : 0.5,
       },
     },
   };
 
   const nameVariants: Variants = {
-    hidden: { opacity: 0, scale: 0.5 },
+    hidden: {
+      opacity: shouldReduceMotion ? 1 : 0,
+      scale: shouldReduceMotion ? 1 : 0.5,
+    },
     visible: {
       opacity: 1,
       scale: 1,
       transition: {
-        duration: 0.5,
-        delay: 0.4,
+        duration: shouldReduceMotion ? 0 : 0.5,
+        delay: shouldReduceMotion ? 0 : 0.4,
       },
     },
   };
 
   return (
-    <section className="w-full py-6 md:py-12 lg:py-16 xl:py-20 bg-background relative overflow-hidden">
-      <div className="absolute inset-0 z-0" />
+    <section className="w-full py-8 md:py-16 lg:py-20 xl:py-24 bg-background relative overflow-hidden">
+      <div className="absolute inset-0 bg-linear-to-br from-background via-background to-muted/20 z-0" />
       <motion.div
         className="px-4 md:px-6 relative z-10"
         variants={containerVariants}
         initial="hidden"
         animate="visible"
       >
-        <div className="flex flex-col items-center space-y-8 text-left md:items-center md:text-center">
+        <div className="flex flex-col items-center space-y-10 md:space-y-12 text-left md:items-center md:text-center">
           <div className="flex justify-center overflow-visible">
             <Image
               src="https://dgblq0ba7cx3huq6.public.blob.vercel-storage.com/profile.jpg"
