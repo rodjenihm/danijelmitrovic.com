@@ -52,7 +52,7 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          <div className="sticky top-0 z-50 shadow shadow-muted">
+          <div className="sticky top-0 z-50 shadow-sm shadow-muted">
             <Navbar />
           </div>
           <main className="flex-1">{children}</main>

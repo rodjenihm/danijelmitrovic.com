@@ -43,7 +43,7 @@ export default function Portfolio() {
 function AboutMe() {
   return (
     <section className="w-full bg-background">
-      <div className="container px-4 md:px-6 mx-auto max-w-screen-lg">
+      <div className="container px-4 md:px-6 mx-auto max-w-(--breakpoint-lg)">
         <div className="space-y-12">
           <h1 className="text-4xl font-bold text-center mb-8">About Me</h1>
 
@@ -104,7 +104,7 @@ function AboutMe() {
 function WorkExperience() {
   return (
     <section className="w-full bg-background">
-      <div className="max-w-screen-lg px-4 md:px-6 mx-auto">
+      <div className="max-w-(--breakpoint-lg) px-4 md:px-6 mx-auto">
         <h2 className="text-3xl font-bold text-center mb-12">
           Work Experience
         </h2>
@@ -256,13 +256,13 @@ const skills = [
 function TechStack() {
   return (
     <section className="">
-      <div className="container px-4 md:px-6 max-w-screen-lg mx-auto">
+      <div className="container px-4 md:px-6 max-w-(--breakpoint-lg) mx-auto">
         <h2 className="text-3xl font-bold text-center mb-12">Tech Stack</h2>
         <div className="flex flex-col sm:flex-row flex-wrap justify-center gap-6 max-w-3xl mx-auto">
           {skills.map((skill, index) => (
             <div
               key={index}
-              className="bg-primary/10 hover:bg-primary/20 text-primary rounded-md md:px-4 md:py-2 md:text-sm px-2 py-1 text-xs font-medium shadow-sm hover:shadow-md transition duration-200 flex items-center gap-2"
+              className="bg-primary/10 hover:bg-primary/20 text-primary rounded-md md:px-4 md:py-2 md:text-sm px-2 py-1 text-xs font-medium shadow-xs hover:shadow-md transition duration-200 flex items-center gap-2"
             >
               <skill.icon size={20} />
               {skill.name}
@@ -276,7 +276,7 @@ function TechStack() {
 
 function GetInTouch() {
   return (
-    <section className="w-full bg-background max-w-screen-lg mx-auto">
+    <section className="w-full bg-background max-w-(--breakpoint-lg) mx-auto">
       <div className="container px-4 md:px-6 mx-auto">
         <div className="max-w-2xl mx-auto text-center space-y-10">
           <h2 className="text-3xl font-bold">Get in Touch</h2>

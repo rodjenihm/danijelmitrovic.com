@@ -27,7 +27,7 @@ export default function Navbar() {
 
   return (
     <nav
-      className="h-20 flex items-center justify-between p-4 bg-background max-w-screen-xl mx-auto"
+      className="h-20 flex items-center justify-between p-4 bg-background max-w-(--breakpoint-xl) mx-auto"
       aria-label="Main navigation"
     >
       <Link href="/" className="flex items-center space-x-2">
@@ -39,7 +39,7 @@ export default function Navbar() {
         <DropdownMenu>
           <DropdownMenuTrigger asChild>
             <button
-              className={`text-sm font-medium transition-colors hover:text-primary focus:outline-none focus:ring-0 ${
+              className={`text-sm font-medium transition-colors hover:text-primary focus:outline-hidden focus:ring-0 ${
                 pathname.startsWith("/portfolio")
                   ? "text-primary font-bold underline"
                   : "text-muted-foreground"

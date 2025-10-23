@@ -57,7 +57,7 @@ export default async function Blog() {
   const posts = await getPosts();
   return (
     <div className="container mx-auto py-8 px-4 sm:px-6 lg:px-8">
-      <div className="max-w-screen-lg mx-auto">
+      <div className="max-w-(--breakpoint-lg) mx-auto">
         <h1 className="text-3xl font-bold mb-8">Tech Blog</h1>
         <ul>
           {posts.map((post) => (

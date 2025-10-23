@@ -26,7 +26,7 @@ export async function generateMetadata({
 const BlogPostLayout: React.FC<BlogPostLayoutProps> = ({ children, meta }) => {
   return (
     <article className="py-12 px-4 sm:px-6 lg:px-8">
-      <div className="max-w-screen-lg mx-auto">
+      <div className="max-w-(--breakpoint-lg) mx-auto">
         <h1 className="text-4xl font-bold mb-4">{meta.title}</h1>
         <p className="text-gray-500 text-sm mb-2">
           Published: {formatBlogDate(meta.date)}

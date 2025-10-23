@@ -68,7 +68,7 @@ export default function Hero() {
             className="text-3xl font-extrabold tracking-tighter sm:text-4xl md:text-5xl lg:text-5xl/none"
             variants={nameVariants}
           >
-            <span className="bg-clip-text text-transparent bg-gradient-to-r from-primary via-purple-500 to-pink-500">
+            <span className="bg-clip-text text-transparent bg-linear-to-r from-primary via-purple-500 to-pink-500">
               Danijel Mitrović
             </span>
           </motion.h1>
