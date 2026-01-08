@@ -28,7 +28,7 @@ const BlogPostLayout: React.FC<BlogPostLayoutProps> = ({ children, meta }) => {
     <article className="py-12 px-4 sm:px-6 lg:px-8">
       <div className="max-w-(--breakpoint-lg) mx-auto">
         <h1 className="text-4xl font-bold mb-4">{meta.title}</h1>
-        <p className="text-gray-500 text-sm mb-2">
+        <p className="text-muted-foreground text-sm mb-2">
           Published: {formatBlogDate(meta.date)}
         </p>
 
@@ -42,7 +42,7 @@ const BlogPostLayout: React.FC<BlogPostLayoutProps> = ({ children, meta }) => {
           </div>
         )}
 
-        <div className="prose prose-xl">{children}</div>
+        <div className="prose prose-lg dark:prose-invert max-w-none">{children}</div>
       </div>
     </article>
   );

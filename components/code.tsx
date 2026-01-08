@@ -24,7 +24,7 @@ const Code: React.FC<CodeProps> = ({ children, className, inline }) => {
 
   if (inline) {
     return (
-      <code className="bg-gray-200 dark:bg-gray-800 text-gray-800 dark:text-white px-1 py-0.5 rounded text-sm">
+      <code className="bg-secondary text-secondary-foreground px-1 py-0.5 rounded text-sm">
         {children}
       </code>
     );
@@ -34,7 +34,7 @@ const Code: React.FC<CodeProps> = ({ children, className, inline }) => {
     <div className="relative">
       <button
         onClick={handleCopy}
-        className="absolute top-2 right-2 bg-gray-700 hover:bg-gray-600 text-white p-1 rounded text-sm"
+        className="absolute top-2 right-2 bg-muted hover:bg-muted/80 text-muted-foreground p-1 rounded text-sm"
       >
         {isCopied ? "Copied!" : <FiCopy />}
       </button>
