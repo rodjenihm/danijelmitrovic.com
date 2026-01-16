@@ -4,6 +4,10 @@ import nextMDX from '@next/mdx'
 const nextConfig = {
     // Configure `pageExtensions` to include MDX files
     pageExtensions: ['js', 'jsx', 'mdx', 'ts', 'tsx'],
+    // Optimize barrel imports for icon libraries
+    experimental: {
+        optimizePackageImports: ['lucide-react', 'react-icons'],
+    },
     // Optionally, add any other Next.js config below
     images: {
         remotePatterns: [

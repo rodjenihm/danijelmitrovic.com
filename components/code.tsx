@@ -1,9 +1,17 @@
 "use client";
 
 import React, { useState } from "react";
-import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
+import dynamic from "next/dynamic";
+import { Copy } from "lucide-react";
 import { dracula } from "react-syntax-highlighter/dist/esm/styles/prism";
-import { FiCopy } from "react-icons/fi";
+
+const SyntaxHighlighter = dynamic(
+  () => import("react-syntax-highlighter").then((m) => m.Prism),
+  {
+    ssr: false,
+    loading: () => <pre className="animate-pulse bg-muted h-20 rounded" />,
+  }
+);
 
 interface CodeProps {
   children: React.ReactNode;
@@ -36,7 +44,7 @@ const Code: React.FC<CodeProps> = ({ children, className, inline }) => {
         onClick={handleCopy}
         className="absolute top-2 right-2 bg-muted hover:bg-muted/80 text-muted-foreground p-1 rounded text-sm"
       >
-        {isCopied ? "Copied!" : <FiCopy />}
+        {isCopied ? "Copied!" : <Copy className="h-4 w-4" />}
       </button>
       <SyntaxHighlighter language={language} style={dracula} showLineNumbers>
         {String(children).replace(/\n$/, "")}
