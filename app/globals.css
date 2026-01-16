@@ -190,3 +190,113 @@
   --tw-prose-th-borders: hsl(var(--border));
   --tw-prose-td-borders: hsl(var(--border));
 }
+
+/* Retro Terminal Styles */
+:root {
+  --terminal-bg: #0d0d0d;
+  --terminal-green: #00ff00;
+  --terminal-amber: #ffaa00;
+  --terminal-dim: #006600;
+  --terminal-red: #ff5f56;
+  --terminal-yellow: #ffbd2e;
+  --terminal-green-btn: #27c93f;
+}
+
+/* CRT scanline overlay */
+.terminal-crt::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(
+    0deg,
+    rgba(0, 0, 0, 0.15) 0px,
+    rgba(0, 0, 0, 0.15) 1px,
+    transparent 1px,
+    transparent 2px
+  );
+  pointer-events: none;
+  z-index: 10;
+}
+
+/* CRT flicker effect */
+.terminal-crt::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(18, 16, 16, 0.1);
+  opacity: 0;
+  pointer-events: none;
+  z-index: 10;
+  animation: terminal-flicker 0.15s infinite;
+}
+
+@keyframes terminal-flicker {
+  0% { opacity: 0.27861; }
+  5% { opacity: 0.34769; }
+  10% { opacity: 0.23604; }
+  15% { opacity: 0.90626; }
+  20% { opacity: 0.18128; }
+  25% { opacity: 0.83891; }
+  30% { opacity: 0.65583; }
+  35% { opacity: 0.67807; }
+  40% { opacity: 0.26559; }
+  45% { opacity: 0.84693; }
+  50% { opacity: 0.96019; }
+  55% { opacity: 0.08594; }
+  60% { opacity: 0.20313; }
+  65% { opacity: 0.71988; }
+  70% { opacity: 0.53455; }
+  75% { opacity: 0.37288; }
+  80% { opacity: 0.71428; }
+  85% { opacity: 0.70419; }
+  90% { opacity: 0.7003; }
+  95% { opacity: 0.36108; }
+  100% { opacity: 0.24387; }
+}
+
+/* Respect reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+  .terminal-crt::after {
+    animation: none;
+    opacity: 0;
+  }
+}
+
+/* Terminal cursor blink */
+@keyframes terminal-cursor-blink {
+  0%, 50% { opacity: 1; }
+  51%, 100% { opacity: 0; }
+}
+
+.terminal-cursor {
+  animation: terminal-cursor-blink 1s step-end infinite;
+}
+
+/* Terminal text glow effect */
+.terminal-text-glow {
+  text-shadow: 0 0 5px var(--terminal-green), 0 0 10px var(--terminal-green);
+}
+
+/* Terminal window chrome (macOS style buttons) */
+.terminal-window-btn {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  transition: filter 0.15s ease;
+}
+
+.terminal-window-btn:hover {
+  filter: brightness(1.2);
+}
+
+.terminal-window-btn-close {
+  background-color: var(--terminal-red);
+}
+
+.terminal-window-btn-minimize {
+  background-color: var(--terminal-yellow);
+}
+
+.terminal-window-btn-maximize {
+  background-color: var(--terminal-green-btn);
+}

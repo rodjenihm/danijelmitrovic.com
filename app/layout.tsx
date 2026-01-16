@@ -5,6 +5,8 @@ import Navbar from "../components/navbar";
 import Footer from "../components/footer";
 import { ThemeProvider } from "@/components/theme-provider";
 import { SpeedInsights } from "@vercel/speed-insights/next";
+import { TerminalProvider } from "@/components/terminal/terminal-provider";
+import { RetroTerminal } from "@/components/terminal/retro-terminal";
 
 const poppins = Inter({
   subsets: ["latin"],
@@ -52,13 +54,16 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          <div className="sticky top-0 z-50 shadow-sm shadow-muted">
-            <Navbar />
-          </div>
-          <main className="flex-1">{children}</main>
-          <div className="mt-auto">
-            <Footer />
-          </div>
+          <TerminalProvider>
+            <div className="sticky top-0 z-50 shadow-sm shadow-muted">
+              <Navbar />
+            </div>
+            <main className="flex-1">{children}</main>
+            <div className="mt-auto">
+              <Footer />
+            </div>
+            <RetroTerminal />
+          </TerminalProvider>
           <script
             type="application/ld+json"
             dangerouslySetInnerHTML={{
