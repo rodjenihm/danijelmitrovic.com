@@ -1,7 +1,0 @@
-# Ignore the entire 'node_modules' directory
-node_modules/
-
-.env.local
-
-.next/
-out/
