@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import Image from "next/image";
 import { Briefcase, BookOpen } from "lucide-react";
+import { AnimatedBlobs } from "./animated-blobs";
 
 export default function Hero() {
   const shouldReduceMotion = useReducedMotion();
@@ -51,7 +52,7 @@ export default function Hero() {
 
   return (
     <section className="w-full py-8 md:py-16 lg:py-20 xl:py-24 bg-background relative overflow-hidden">
-      <div className="absolute inset-0 bg-linear-to-br from-background via-background to-muted/20 z-0" />
+      <AnimatedBlobs />
       <motion.div
         className="px-4 md:px-6 relative z-10"
         variants={containerVariants}

@@ -27,7 +27,7 @@ export default function Navbar() {
 
   return (
     <nav
-      className="h-20 flex items-center justify-between p-4 bg-background max-w-7xl mx-auto"
+      className="h-20 flex items-center justify-between p-4 max-w-7xl mx-auto"
       aria-label="Main navigation"
     >
       <Link href="/" className="flex items-center space-x-2">
@@ -39,9 +39,9 @@ export default function Navbar() {
         <DropdownMenu>
           <DropdownMenuTrigger asChild>
             <button
-              className={`text-sm font-medium transition-colors hover:text-primary focus:outline-hidden focus:ring-0 ${
+              className={`relative text-sm font-medium transition-colors hover:text-primary focus:outline-hidden focus:ring-0 group ${
                 pathname.startsWith("/portfolio")
-                  ? "text-primary font-bold underline"
+                  ? "text-primary font-bold"
                   : "text-muted-foreground"
               }`}
             >
@@ -49,6 +49,13 @@ export default function Navbar() {
                 Portfolio
                 <ChevronDown className="h-4 w-4 ml-1" />
               </span>
+              <span
+                className={`absolute -bottom-1 left-0 h-0.5 bg-primary transition-all duration-300 ${
+                  pathname.startsWith("/portfolio")
+                    ? "w-full"
+                    : "w-0 group-hover:w-full"
+                }`}
+              />
             </button>
           </DropdownMenuTrigger>
           <DropdownMenuContent align="center">
@@ -68,13 +75,18 @@ export default function Navbar() {
         </DropdownMenu>
         <Link
           href="/blog"
-          className={`text-sm font-medium transition-colors hover:text-primary ${
+          className={`relative text-sm font-medium transition-colors hover:text-primary group ${
             pathname === "/blog"
-              ? "text-primary font-bold underline"
+              ? "text-primary font-bold"
               : "text-muted-foreground"
           }`}
         >
           Blog
+          <span
+            className={`absolute -bottom-1 left-0 h-0.5 bg-primary transition-all duration-300 ${
+              pathname === "/blog" ? "w-full" : "w-0 group-hover:w-full"
+            }`}
+          />
         </Link>
         <div className="border-l dark:border-l-gray-700 h-6 ml-2 mr-2"></div>
         <ModeToggle />

@@ -55,7 +55,7 @@ export default function RootLayout({
           disableTransitionOnChange
         >
           <TerminalProvider>
-            <div className="sticky top-0 z-50 shadow-sm shadow-muted">
+            <div className="sticky top-0 z-50 bg-background/80 backdrop-blur-md border-b border-border/50">
               <Navbar />
             </div>
             <main className="flex-1">{children}</main>
