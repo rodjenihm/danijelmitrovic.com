@@ -367,7 +367,7 @@ function GetInTouch() {
                     <a
                       href={href}
                       target="_blank"
-                      rel="noopener noreferrer"
+                      rel="me noopener noreferrer"
                       aria-label={label}
                     >
                       <Icon

@@ -50,9 +50,18 @@ async function getPosts() {
 }
 
 export const metadata: Metadata = {
-  title: "Blog | Danijel Mitrović",
+  title: "Blog",
   description:
-    "Explore blog posts on Java, Spring, cloud technologies, and more.",
+    "Explore blog posts by Danijel Mitrović on Java, Spring, cloud technologies, backend development, and more.",
+  alternates: {
+    canonical: "/blog",
+  },
+  openGraph: {
+    title: "Blog | Danijel Mitrović",
+    description:
+      "Explore blog posts by Danijel Mitrović on Java, Spring, cloud technologies, backend development, and more.",
+    type: "website",
+  },
 };
 
 export default async function Blog() {

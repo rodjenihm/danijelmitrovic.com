@@ -15,21 +15,26 @@ const poppins = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Danijel Mitrović",
+  metadataBase: new URL("https://www.danijelmitrovic.com"),
+  title: {
+    default: "Danijel Mitrović | Backend Software Engineer",
+    template: "%s | Danijel Mitrović",
+  },
   description:
     "Danijel Mitrović: Backend-specialized Software Engineer from Serbia. Expert in Java, Spring, Cloud, PostgreSQL, MongoDB, and Redis. Explore my portfolio.",
   keywords:
-    "Danijel Mitrović, Software Engineer, Backend Developer, Java, Spring, Cloud, PostgreSQL, MongoDB, Redis",
+    "Danijel Mitrović, Danijel Mitrovic, Software Engineer, Backend Developer, Java, Spring, Cloud, PostgreSQL, MongoDB, Redis",
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://danijelmitrovic.com",
+    url: "https://www.danijelmitrovic.com",
+    siteName: "Danijel Mitrović",
     title: "Danijel Mitrović | Backend Software Engineer",
     description:
       "Backend-specialized Software Engineer from Serbia. Expertise in Java, Spring, Cloud, and databases.",
   },
   twitter: {
-    card: "summary",
+    card: "summary_large_image",
     site: "@dan_mitrovic_91",
     creator: "@dan_mitrovic_91",
   },
@@ -71,8 +76,15 @@ export default function RootLayout({
                 "@context": "https://schema.org",
                 "@type": "Person",
                 name: "Danijel Mitrović",
+                alternateName: "Danijel Mitrovic",
+                givenName: "Danijel",
+                familyName: "Mitrović",
                 jobTitle: "Backend Engineer",
-                url: "https://danijelmitrovic.com",
+                description:
+                  "Backend-specialized Software Engineer from Serbia with expertise in Java, Spring, Cloud, and databases.",
+                url: "https://www.danijelmitrovic.com",
+                image:
+                  "https://dgblq0ba7cx3huq6.public.blob.vercel-storage.com/profile.jpg",
                 sameAs: [
                   "https://github.com/rodjenihm",
                   "https://linkedin.com/in/danijel-mitrović",
@@ -86,6 +98,14 @@ export default function RootLayout({
                   "MongoDB",
                   "Redis",
                 ],
+                nationality: {
+                  "@type": "Country",
+                  name: "Serbia",
+                },
+                alumniOf: {
+                  "@type": "CollegeOrUniversity",
+                  name: "University of Belgrade",
+                },
               }),
             }}
           />

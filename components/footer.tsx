@@ -34,7 +34,7 @@ export default function Footer() {
         <div className="flex space-x-4">
           {socialLinks.map((link) => (
             <Button key={link.name} variant="ghost" size="icon" asChild>
-              <Link href={link.url} target="_blank" rel="noopener noreferrer">
+              <Link href={link.url} target="_blank" rel="me noopener noreferrer">
                 {link.icon}
                 <span className="sr-only">{link.name}</span>
               </Link>
