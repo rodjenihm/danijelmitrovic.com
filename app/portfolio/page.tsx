@@ -123,8 +123,14 @@ const experiences = [
     color: "bg-purple-500",
     period: "June 2025 - Present",
     summary:
-      "Senior Backend Engineer developing high-traffic iGaming platform services.",
-    description: `I continued my professional growth by joining TwogNation as a Senior Backend Engineer. In this role, I am developing and maintaining the backend services for a high-traffic iGaming platform using Java and the Spring Framework. My responsibilities include deploying and managing applications on AWS ECS with Fargate, ensuring high availability and scalability. I utilize Amazon Aurora for managing and persisting application data, and Redis for caching to improve performance. My role also involves integrating with various payment processors and KYC providers to ensure secure transactions and compliance with Anti-Money Laundering (AML) regulations. To maintain system health and performance, I utilize Prometheus and Grafana for monitoring and log analysis, allowing for proactive issue resolution and system optimization.`,
+      "Senior Backend Engineer responsible for payment integrations, anti-fraud systems, and performance optimizations.",
+    description: `As a Senior Backend Engineer at TwogNation, I develop and maintain backend services using Java, Spring Boot, and the Spring ecosystem. My main focus has been a high-traffic iGaming platform that I joined when it was just getting off the ground. My responsibilities include deploying and managing applications on AWS ECS with Fargate, ensuring high availability and scalability. I utilize Amazon Aurora for managing and persisting application data, and Redis for caching to improve performance.
+
+I am responsible for integrating multiple payment processors into the platform, enabling seamless deposits and withdrawals. I also implemented integrations with KYC providers to ensure secure transactions and compliance with AML regulations. A key area of my work has been developing the anti-fraud system that validates withdrawal and redemption requests—analyzing user details and risk signals to either approve payouts or flag them for manual review.
+
+I am also heavily involved in performance optimizations across the platform, including integrating read replicas into our Aurora database architecture to distribute query load and reduce latency, as well as targeted query optimizations for high-traffic endpoints. To maintain system health and identify bottlenecks, I utilize Prometheus and Grafana for monitoring and log analysis.
+
+Beyond the core platform, I also contribute to internal tools and services. These projects have allowed me to step outside my main tech stack. I've worked with TypeScript and Node.js, and even tackled front-end tasks for internal dashboards.`,
     technologies: ["Java", "Spring", "AWS", "Aurora", "Redis", "Prometheus"],
     roles: [{ title: "Senior Backend Engineer", period: "June 2025 - Present" }],
   },
@@ -173,19 +179,18 @@ function WorkExperience() {
         </ScrollReveal>
 
         <div className="relative pl-8">
-          <div className="absolute left-0 top-0 w-1 h-full bg-primary" />
+          <div className="absolute left-0 top-0 w-0.5 h-full bg-gradient-to-b from-primary via-primary/50 to-transparent" />
 
           {experiences.map((exp, index) => (
             <ScrollReveal key={exp.id} delay={index * 0.15}>
-              <div className="mb-10 relative last:mb-0">
-                <div className="absolute left-[-17px] top-0 w-6 h-6 rounded-full bg-primary flex items-center justify-center">
-                  <div className="w-3 h-3 rounded-full bg-background" />
-                </div>
-                <Card className="bg-card border border-border shadow-sm hover:shadow-md transition-shadow duration-200 overflow-hidden">
-                  <CardContent className="p-6">
-                    <div className="flex items-center gap-4 mb-4">
+              <div className="mb-24 relative last:mb-0 group">
+                <div className="absolute left-[-3px] top-2 w-2 h-2 rounded-full bg-primary shadow-md shadow-primary/50" />
+                <Card className="relative bg-card/60 backdrop-blur-sm border border-border/50 rounded-2xl shadow-lg shadow-black/5 dark:shadow-black/20 hover:shadow-xl hover:border-primary/30 transition-all duration-300 overflow-hidden">
+                  <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-primary/5 via-transparent to-primary/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
+                  <CardContent className="relative p-8">
+                    <div className="flex items-center gap-5 mb-4">
                       <div
-                        className={`h-12 w-12 rounded-full ${exp.color} flex items-center justify-center text-white font-bold text-sm`}
+                        className={`h-14 w-14 rounded-xl ${exp.color} flex items-center justify-center text-white font-bold text-sm ring-1 ring-white/20 shadow-lg transition-transform group-hover:scale-105`}
                       >
                         {exp.initials}
                       </div>
@@ -199,7 +204,7 @@ function WorkExperience() {
                         onClick={() =>
                           setExpandedId(expandedId === exp.id ? null : exp.id)
                         }
-                        className="p-2 hover:bg-muted rounded-full transition-colors"
+                        className="p-2 hover:bg-primary/10 hover:text-primary rounded-lg transition-colors"
                         aria-label={
                           expandedId === exp.id
                             ? "Collapse details"
@@ -223,7 +228,7 @@ function WorkExperience() {
                       {exp.technologies.map((tech) => (
                         <span
                           key={tech}
-                          className="px-2 py-1 text-xs rounded-full bg-primary/10 text-primary hover:bg-primary/20 transition-colors"
+                          className="px-3 py-1.5 text-xs font-medium rounded-lg bg-gradient-to-r from-primary/10 to-primary/5 text-primary border border-primary/10 hover:border-primary/30 transition-all"
                         >
                           {tech}
                         </span>
